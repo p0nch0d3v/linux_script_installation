@@ -11,8 +11,8 @@ echo Checking for $pkg_name: $pkg_ok
 if [ "" == "$pkg_ok" ] || [ $update == "1" ]; then
  	echo "No $pkg_name. Setting up $pkg_name."
 	cd /tmp
-	rm atom-amd64.deb.deb
-	curl -O -J -L https://atom.io/download/deb -o atom-amd64.deb
+	rm atom-amd64.deb
+	curl -O -J -L https://atom-installer.github.com/v1.10.2/atom-amd64.deb -o atom-amd64.deb
 	dpkg -i atom-amd64.deb
 	apt-get install -f -y
 fi
