@@ -17,3 +17,4 @@ echo "---   Debian 8 installation."
 ./debian/install_dropbox_debian_8.sh
 ./install_pencil_project.sh
 ./install_atom_io.sh
+./install_remarkable.sh

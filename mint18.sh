@@ -17,3 +17,4 @@ clear
 ./ubuntu/install_dropbox_ubuntu.sh
 ./install_pencil_project.sh
 ./install_atom_io.sh
+./install_remarkable.sh
