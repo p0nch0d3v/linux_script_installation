@@ -14,6 +14,7 @@ packages+=('npm')
 packages+=('vim')
 packages+=('python-pip')
 packages+=('virtualenv')
+packages+=('pylint')
 
 packages_to_install=""
 
