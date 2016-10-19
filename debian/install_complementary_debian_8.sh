@@ -3,7 +3,7 @@
 echo "---   Complementary packages installation."
 
 packages=()
-packages+=('chromium')
+#packages+=('chromium')
 packages+=('audacity')
 packages+=('banshee')
 packages+=('brasero')
@@ -30,6 +30,7 @@ packages+=('bleachbit')
 packages+=('keepassx')
 ##packages+=('skype')
 packages+=('blueman')
+packages+=('zeal')
 
 packages_to_install=""
 
