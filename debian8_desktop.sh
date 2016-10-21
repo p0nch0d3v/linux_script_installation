@@ -10,7 +10,7 @@ echo "---   Debian 8 installation."
 ./install_google_remote_desktop.sh
 ./install_google_talk_plugin.sh
 ./install_google_music_manager.sh
-./install_sublime_text.sh -u
+./install_sublime_text.sh
 ./debian/install_insync_client_debian_8.sh
 ./debian/install_owncloud_client_debian_8.sh
 ./debian/install_virtualbox_debian_8.sh
@@ -19,3 +19,5 @@ echo "---   Debian 8 installation."
 ./install_pencil_project.sh
 ./install_atom_io.sh
 ./install_remarkable.sh
+./install_simple_note.sh
+
