@@ -3,7 +3,6 @@
 echo "---   Complementary packages installation."
 
 packages=()
-#packages+=('chromium')
 packages+=('audacity')
 packages+=('banshee')
 packages+=('brasero')
@@ -24,11 +23,9 @@ packages+=('vlc')
 packages+=('shutter')
 packages+=('shotwell')
 packages+=('gthumb')
-##packages+=('gstreamer0.10-plugins-ugly')
 packages+=('remmina')
 packages+=('bleachbit')
 packages+=('keepassx')
-##packages+=('skype')
 packages+=('blueman')
 packages+=('zeal')
 
@@ -38,6 +35,6 @@ for i in ${packages[@]}
 do
 	packages_to_install+=$i
 	packages_to_install+=" "
-done 
+done
 
 aptitude install $packages_to_install -y
