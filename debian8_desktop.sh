@@ -20,4 +20,4 @@ echo "---   Debian 8 installation."
 ./install_atom_io.sh
 ./install_remarkable.sh
 ./install_simple_note.sh
-
+./debian/install_docker_debian_8.sh
