@@ -28,6 +28,7 @@ packages+=('remmina')
 packages+=('bleachbit')
 packages+=('keepassx')
 packages+=('skype')
+packages+=('zeal')
 
 packages_to_install=""
 
