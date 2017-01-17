@@ -18,3 +18,4 @@ clear
 ./install_pencil_project.sh
 ./install_atom_io.sh
 ./install_remarkable.sh
+./install_vscode.sh
