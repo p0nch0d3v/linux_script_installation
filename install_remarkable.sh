@@ -10,7 +10,7 @@ if [ -z "$pkg_ok" ] || [ -z "$pkg_version" ] || [ "" == "$pkg_ok" ] || [ "1.87" 
  	echo "No $pkg_name. Setting up $pkg_name."
 	cd /tmp
 	rm remarkable_1.87_all.deb
-	curl -O -J -L wget https://remarkableapp.github.io/files/remarkable_1.87_all.deb
+	curl -O -J -L https://remarkableapp.github.io/files/remarkable_1.87_all.deb
 	dpkg -i remarkable_1.87_all.deb
 	apt-get install -f -y
 fi
