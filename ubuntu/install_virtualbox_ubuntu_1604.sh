@@ -12,5 +12,5 @@ if [ -z "$pkg_ok" ] || [ "" == "$pkg_ok" ]; then
 	wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 	echo 'deb http://download.virtualbox.org/virtualbox/debian xenial contrib' >> /etc/apt/sources.list.d/virtualbox.list
 	aptitude update -y
-	aptitude install virtualbox-5.1
+	aptitude install virtualbox-5.1 -y
 fi
