@@ -19,3 +19,4 @@ clear
 ./install_atom_io.sh
 ./install_remarkable.sh
 ./install_vscode.sh
+./ubuntu/install_nodejs_ubuntu_1604.sh
