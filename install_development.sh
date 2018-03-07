@@ -3,15 +3,7 @@
 echo "---   Development packages installation."
 
 packages=()
-packages+=('git')
 packages+=('git-flow')
-packages+=('meld')
-packages+=('mysql-client')
-packages+=('mysql-workbench')
-# packages+=('nodejs')
-# packages+=('nodejs-legacy')
-packages+=('npm')
-packages+=('vim')
 packages+=('python-pip')
 packages+=('virtualenv')
 packages+=('pylint')
