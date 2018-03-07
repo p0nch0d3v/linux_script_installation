@@ -6,6 +6,7 @@ clear
 ./ubuntu/install_complementary_ubuntu_16_04.sh
 ./install_development.sh
 ./install_google_chrome.sh
+./install_opera.sh
 ./install_google_remote_desktop.sh
 ./install_google_talk_plugin.sh
 ./install_google_music_manager.sh
