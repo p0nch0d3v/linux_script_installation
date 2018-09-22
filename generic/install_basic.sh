@@ -1,26 +1,46 @@
 #!/bin/bash
 
-echo "---   Basic packages installation."
+read -p "Do you want to install basic packages (y/n)? " install_basic
 
-packages=()
-packages+=('dpkg')
-packages+=('aircrack-ng')
-packages+=('cups')
-packages+=('curl')
-packages+=('p7zip')
-packages+=('p7zip-full')
-packages+=('p7zip-rar')
-packages+=('gnupg')
-packages+=('vim')
-packages+=('git')
-packages+=('wget')
+if [ ${install_basic:0:1} == 'y' ] || [ ${install_basic:0:1} == 'Y' ]; then
 
-packages_to_install=""
+    echo "---   Basic packages installation."
 
-for i in ${packages[@]}
-do
-	packages_to_install+=$i
-	packages_to_install+=" "
-done 
+    options=(
+        build-essential "build-essential" off
+        dpkg "dpkg" off
+        aircrack-ng "aircrack-ng" off
+        cups "cups" off
+        curl "curl" off
+        p7zip "p7zip" off
+        p7zip-full "p7zip-full" off
+        p7zip-rar "p7zip-rar" off
+        gnupg "gnupg" off
+        vim "vim" off
+        git "git" off
+        wget "wget" off
+    )
 
-aptitude install $packages_to_install -y
+    packages_to_install=""
+
+    cmd=(dialog --separate-output --checklist "Basic packages, select packages to install:" 25 50 15)
+
+    choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+
+    for i in ${choices[@]}
+    do
+        pkg_ok=""
+        pkg_ok=$(dpkg-query -W --showformat='${Status}\n' $i|grep "install ok installed")
+        
+        if [ -z "$pkg_ok" ] || [ "" == "$pkg_ok" ]; then
+            packages_to_install+=$i
+            packages_to_install+=" "
+        fi
+    done 
+
+    if [ "" != "$packages_to_install" ]; then
+        echo "Packages to install: "$packages_to_install
+        aptitude install $packages_to_install -y
+    fi
+fi
+

@@ -1,51 +1,68 @@
 #!/bin/bash
-pkg_name="google-chrome-stable"
-pkg_ok=""
-pkg_version=""
-echo "---   $pkg_name installation."
-pkg_ok=$(dpkg-query -W --showformat='${Status}\n' $pkg_name|grep "install ok installed")
-pkg_version=$(dpkg-query -W --showformat='${Version}\n' $pkg_name)
-echo Checking for $pkg_name: $pkg_ok $pkg_version
-if [ -z "$pkg_ok" ] || [ "" == "$pkg_ok" ]; then
-	echo "No $pkg_name. Setting up $pkg_name."
-	cd /tmp
-	rm google-chrome-stable_current_amd64.deb
-	wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-	curl -O -J -L https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-	dpkg -i google-chrome-stable_current_amd64.deb
-	apt-get install -f -y
+
+read -p "Do you want to install Google Chrome (y/n)? "  install_gchrome
+
+if [ ${install_gchrome:0:1} == 'y' ] || [ ${install_gchrome:0:1} == 'Y' ]; then
+
+    pkg_name="google-chrome-stable"
+    pkg_ok=""
+    pkg_version=""
+    echo "---   $pkg_name installation."
+    pkg_ok=$(dpkg-query -W --showformat='${Status}\n' $pkg_name|grep "install ok installed")
+    pkg_version=$(dpkg-query -W --showformat='${Version}\n' $pkg_name)
+    echo Checking for $pkg_name: $pkg_ok $pkg_version
+    if [ -z "$pkg_ok" ] || [ "" == "$pkg_ok" ]; then
+	    echo "No $pkg_name. Setting up $pkg_name."
+	    cd /tmp
+	    rm google-chrome-stable_current_amd64.deb
+	    wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+	    curl -O -J -L https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+	    dpkg -i google-chrome-stable_current_amd64.deb
+	    apt-get install -f -y
+    fi
 fi
 
-pkg_name="google-chrome-beta"
-pkg_ok=""
-pkg_version=""
-echo "---   $pkg_name installation."
-pkg_ok=$(dpkg-query -W --showformat='${Status}\n' $pkg_name|grep "install ok installed")
-pkg_version=$(dpkg-query -W --showformat='${Version}\n' $pkg_name)
-echo Checking for $pkg_name: $pkg_ok $pkg_version
-if [ -z "$pkg_ok" ] || [ "" == "$pkg_ok" ]; then
-	echo "No $pkg_name. Setting up $pkg_name."
-	cd /tmp
-	rm google-chrome-beta_current_amd64.deb
-	wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-	curl -O -J -L https://dl.google.com/linux/direct/google-chrome-beta_current_amd64.deb
-	dpkg -i google-chrome-beta_current_amd64.deb
-	apt-get install -f -y
+read -p "Do you want to install Google Chrome Beta (y/n)? "  install_gchrome
+
+if [ ${install_gchrome:0:1} == 'y' ] || [ ${install_gchrome:0:1} == 'Y' ]; then
+
+    pkg_name="google-chrome-beta"
+    pkg_ok=""
+    pkg_version=""
+    echo "---   $pkg_name installation."
+    pkg_ok=$(dpkg-query -W --showformat='${Status}\n' $pkg_name|grep "install ok installed")
+    pkg_version=$(dpkg-query -W --showformat='${Version}\n' $pkg_name)
+    echo Checking for $pkg_name: $pkg_ok $pkg_version
+    if [ -z "$pkg_ok" ] || [ "" == "$pkg_ok" ]; then
+	    echo "No $pkg_name. Setting up $pkg_name."
+	    cd /tmp
+	    rm google-chrome-beta_current_amd64.deb
+	    wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+	    curl -O -J -L https://dl.google.com/linux/direct/google-chrome-beta_current_amd64.deb
+	    dpkg -i google-chrome-beta_current_amd64.deb
+	    apt-get install -f -y
+    fi
 fi
 
-pkg_name="google-chrome-unstable"
-pkg_ok=""
-pkg_version=""
-echo "---   $pkg_name installation."
-pkg_ok=$(dpkg-query -W --showformat='${Status}\n' $pkg_name|grep "install ok installed")
-pkg_version=$(dpkg-query -W --showformat='${Version}\n' $pkg_name)
-echo Checking for $pkg_name: $pkg_ok $pkg_version
-if [ -z "$pkg_ok" ] || [ "" == "$pkg_ok" ]; then
-	echo "No $pkg_name. Setting up $pkg_name."
-	cd /tmp
-	rm google-chrome-unstable_current_amd64.deb
-	wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-	curl -O -J -L https://dl.google.com/linux/direct/google-chrome-unstable_current_amd64.deb
-	dpkg -i google-chrome-unstable_current_amd64.deb
-	apt-get install -f -y
+read -p "Do you want to install Google Chrome Unstable (y/n)? "  install_gchrome
+
+if [ ${install_gchrome:0:1} == 'y' ] || [ ${install_gchrome:0:1} == 'Y' ]; then
+
+    pkg_name="google-chrome-unstable"
+    pkg_ok=""
+    pkg_version=""
+    echo "---   $pkg_name installation."
+    pkg_ok=$(dpkg-query -W --showformat='${Status}\n' $pkg_name|grep "install ok installed")
+    pkg_version=$(dpkg-query -W --showformat='${Version}\n' $pkg_name)
+    echo Checking for $pkg_name: $pkg_ok $pkg_version
+    if [ -z "$pkg_ok" ] || [ "" == "$pkg_ok" ]; then
+	    echo "No $pkg_name. Setting up $pkg_name."
+	    cd /tmp
+	    rm google-chrome-unstable_current_amd64.deb
+	    wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+	    curl -O -J -L https://dl.google.com/linux/direct/google-chrome-unstable_current_amd64.deb
+	    dpkg -i google-chrome-unstable_current_amd64.deb
+	    apt-get install -f -y
+    fi
 fi
+
